@@ -1069,6 +1069,9 @@ spec:
                 cpuset:
                   description: cpuset determines if the cluster will use cpu-pinning for max performance.
                   type: boolean
+                runtimeClassName:
+                  description: runtimeClassName
+                  type: string
                 datacenter:
                   description: datacenter holds a specification of a datacenter.
                   properties:

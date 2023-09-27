@@ -270,8 +270,9 @@ func StatefulSetForRack(r scyllav1.RackSpec, c *scyllav1.ScyllaCluster, existing
 					},
 				},
 				Spec: corev1.PodSpec{
-					HostNetwork: c.Spec.Network.HostNetworking,
-					DNSPolicy:   c.Spec.Network.GetDNSPolicy(),
+					RuntimeClassName: c.Spec.RuntimeClassName,
+					HostNetwork:      c.Spec.Network.HostNetworking,
+					DNSPolicy:        c.Spec.Network.GetDNSPolicy(),
 					SecurityContext: &corev1.PodSecurityContext{
 						RunAsUser:  pointer.Ptr(rootUID),
 						RunAsGroup: pointer.Ptr(rootGID),

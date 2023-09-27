@@ -109,6 +109,8 @@ type ScyllaClusterSpec struct {
 
 	// externalSeeds specifies the external seeds to propagate to ScyllaDB binary on startup as "seeds" parameter of seed-provider.
 	ExternalSeeds []string `json:"externalSeeds,omitempty"`
+
+	RuntimeClassName *string `json:"runtimeClassName,omitempty"`
 }
 
 type PodIPSourceType string
