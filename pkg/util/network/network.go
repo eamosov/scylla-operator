@@ -40,7 +40,7 @@ func FindEthernetInterfaces() ([]net.Interface, error) {
 
 		// Tune only known prefixes
 		for _, prefix := range knownInterfaceNamesPrefixes {
-			if strings.HasPrefix(iface.Name, prefix) {
+			if strings.HasPrefix(iface.Name, prefix) && !strings.Contains(iface.Name, ".") {
 				ethInterfaces = append(ethInterfaces, iface)
 				break
 			}
